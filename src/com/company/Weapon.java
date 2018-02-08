@@ -10,9 +10,15 @@ public class Weapon extends GameMenu{
         this.weapon = weapon;
     }
     Dialogue dialogue = new Dialogue();
-    Scanner input = new Scanner(System.in);
     private String weapon;
 
+    public String getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(String weapon) {
+        this.weapon = weapon;
+    }
 
     public void whichWeapon(Weapon aWeapon){
         dialogue.smith();
@@ -28,7 +34,8 @@ public class Weapon extends GameMenu{
                 "10. Sword and Shield \n" +
                 "11. Lance\n12. Gunlance \n" +
                 "13. Hunting Horn \n" +
-                "14. Great Sword");
+                "14. Great Sword\n" +
+                "15. Exit the Smithy");
         try{
             switch(input.nextInt()){
                 case 1:
@@ -73,13 +80,18 @@ public class Weapon extends GameMenu{
                 case 14:
                     //Great Sword
                     break;
+                case 15:
+                    //return to menu
+                    Menu(aWeapon);
                 default:
                     input.nextLine();
                     System.out.println("Please pick a weapon Hunter...");
                     whichWeapon(aWeapon);
             }
         }catch(Exception e){
-
+            input.nextLine();
+            System.out.println("Please pick a weapon Hunter...");
+            whichWeapon(aWeapon);
         }
         Menu(aWeapon);
     }
