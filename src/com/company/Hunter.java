@@ -3,12 +3,12 @@ package com.company;
 import java.util.Scanner;
 
 public class Hunter {
-    private final Weapon weapon;
+    private final String weapon;
     Scanner input = new Scanner(System.in);
     private String name;
     private int health;
 
-    public Hunter(String name, int health, Weapon weapon) {
+    public Hunter(String name, int health, String weapon) {
         this.name = name;
         this.health = health;
         this.weapon = weapon;
