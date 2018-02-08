@@ -2,9 +2,9 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Weapon extends Hunter{
+public class Weapon extends GameMenu{
     public Weapon(Dialogue dialogue, Scanner input, String name, int health, String weapon) {
-        super(name,health,weapon);
+        super(dialogue, input, name, health, weapon);
         this.dialogue = dialogue;
         this.input = input;
         this.weapon = weapon;
@@ -13,9 +13,22 @@ public class Weapon extends Hunter{
     Scanner input = new Scanner(System.in);
     private String weapon;
 
-    public void whichWeapon(){
+
+    public void whichWeapon(Weapon aWeapon){
         dialogue.smith();
-        System.out.println("1. Longsword \n2. Switch Axe \n3. Insect Glaive \n4. Charge Blade \n5. Hammer \n6. Duel Blades \n7. Bow \n8. Light Bowgun \n9. Heavy Bowgun \n10. Sword and Shield \n11. Lance\n12. Gunlance \n13. Hunting Horn \n14. Great Sword");
+        System.out.println("1. Longsword \n" +
+                "2. Switch Axe \n" +
+                "3. Insect Glaive \n" +
+                "4. Charge Blade \n" +
+                "5. Hammer \n" +
+                "6. Duel Blades \n" +
+                "7. Bow \n" +
+                "8. Light Bowgun \n" +
+                "9. Heavy Bowgun \n" +
+                "10. Sword and Shield \n" +
+                "11. Lance\n12. Gunlance \n" +
+                "13. Hunting Horn \n" +
+                "14. Great Sword");
         try{
             switch(input.nextInt()){
                 case 1:
@@ -63,10 +76,11 @@ public class Weapon extends Hunter{
                 default:
                     input.nextLine();
                     System.out.println("Please pick a weapon Hunter...");
-                    whichWeapon();
+                    whichWeapon(aWeapon);
             }
         }catch(Exception e){
 
         }
+        Menu(aWeapon);
     }
 }

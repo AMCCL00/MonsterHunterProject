@@ -2,13 +2,13 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Hunter {
+public class Hunter{
     private final String weapon;
     Scanner input = new Scanner(System.in);
     private String name;
     private int health;
 
-    public Hunter(String name, int health, String weapon) {
+    public Hunter(Dialogue dialogue, Scanner input,String name, int health, String weapon) {
         this.name = name;
         this.health = health;
         this.weapon = weapon;
