@@ -3,14 +3,24 @@ package com.company;
 import java.util.Scanner;
 
 public class Weapon extends GameMenu{
-    public Weapon(Dialogue dialogue, Scanner input, String name, int health, String weapon) {
+    public Weapon(Dialogue dialogue, Scanner input, String name, int health, String weapon, int playerDamage) {
         super(dialogue, input, name, health, weapon);
         this.dialogue = dialogue;
         this.input = input;
         this.weapon = weapon;
+        this.playerDamage = playerDamage;
     }
     Dialogue dialogue = new Dialogue();
     private String weapon;
+    private int playerDamage;
+
+    public int getPlayerDamage() {
+        return playerDamage;
+    }
+
+    public void setPlayerDamage(int playerDamage) {
+        this.playerDamage = playerDamage;
+    }
 
     public String getWeapon() {
         return weapon;
