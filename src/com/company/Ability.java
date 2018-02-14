@@ -6,7 +6,7 @@ public class Ability extends Monster{
     private int abilityDamage;
 
     public Ability(String abilityName, int abilityDamage, String name, int Health) {
-        super(name,Health);
+        super();
         this.abilityName = abilityName;
         this.abilityDamage = abilityDamage;
     }

@@ -3,10 +3,30 @@ package com.company;
 public class Monster {
     private String name;
     private int Health;
+    private int monsterDamage;
+    private int monsterSpeed;
 
-    public Monster(String name, int health) {
+    public Monster() {
         this.name = name;
-        Health = health;
+        this.Health = Health;
+        this.monsterDamage = monsterDamage;
+        this.monsterSpeed = monsterSpeed;
+    }
+
+    public int getMonsterSpeed() {
+        return monsterSpeed;
+    }
+
+    public void setMonsterSpeed(int monsterSpeed) {
+        this.monsterSpeed = monsterSpeed;
+    }
+
+    public int getMonsterDamage() {
+        return monsterDamage;
+    }
+
+    public void setMonsterDamage(int monsterDamage) {
+        this.monsterDamage = monsterDamage;
     }
 
     public String getName() {
