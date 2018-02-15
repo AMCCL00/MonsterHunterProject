@@ -10,7 +10,7 @@ public class Hunter{
 
     public Hunter() {
         this.name = name;
-        this.health = health;
+        this.health = 1000;
         this.playerDamage = playerDamage;
     }
 

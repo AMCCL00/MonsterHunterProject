@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
-
+//Andrew McClary
 public class Main {
 
     public static void main(String[] args) {

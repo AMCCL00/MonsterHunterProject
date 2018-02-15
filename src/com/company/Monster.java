@@ -6,7 +6,7 @@ public class Monster {
     private int monsterDamage;
     private int monsterSpeed;
 
-    public Monster() {
+    public Monster(String name, int Health, int monsterDamage) {
         this.name = name;
         this.Health = Health;
         this.monsterDamage = monsterDamage;

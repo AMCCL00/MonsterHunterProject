@@ -6,7 +6,6 @@ public class GameMenu extends Combat{
 
     Scanner input = new Scanner(System.in);
     Combat combat = new Combat();
-    Monster monster = new Monster();
     public void Menu(Weapon aWeapon){
         System.out.println("What would you like to do?");
         System.out.println("1. Change your weapon \n2. Go on a Hunt \n3. Exit the Game");
@@ -54,76 +53,48 @@ public class GameMenu extends Combat{
             switch (input.nextInt()){
                 case 1:
                     //Great Jagras
-                    monster.setHealth(5200);
-                    monster.setName("Great Jagras");
-                    monster.setMonsterDamage(300);
-                    monster.setMonsterSpeed(2);
-                    System.out.println("");
-                    combat.battle(aWeapon);
+                    Monster greatJagras = new Monster("Great Jagras", 5200, 300);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 2:
                     //Tobi-Kadachi
-                    monster.setHealth(7000);
-                    monster.setName("Tobi-Kadachi");
-                    monster.setMonsterDamage(350);
-                    monster.setMonsterSpeed(5);
-                    combat.battle(aWeapon);
+                    Monster tobiKadachi = new Monster("Tobi-Kadachi", 7000,350);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 3:
                     //Anjanath
-                    monster.setHealth(7750);
-                    monster.setName("Anjanath");
-                    monster.setMonsterDamage(400);
-                    monster.setMonsterSpeed(4);
-                    combat.battle(aWeapon);
+                    Monster anjanath = new Monster("Anjanath", 7750, 400);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 4:
                     //Great Girros
-                    monster.setHealth(8250);
-                    monster.setName("Great Girros");
-                    monster.setMonsterDamage(450);
-                    monster.setMonsterSpeed(2);
-                    combat.battle(aWeapon);
+                    Monster greatGirros = new Monster("Great Girros", 8250, 450);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 5:
                     //Rathilos
-                    monster.setHealth(9000);
-                    monster.setName("Rathilos");
-                    monster.setMonsterDamage(500);
-                    monster.setMonsterSpeed(3);
-                    combat.battle(aWeapon);
+                    Monster rathilos = new Monster("Rathilos", 9000, 500);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 6:
                     //Diablos
-                    monster.setHealth(9500);
-                    monster.setName("Diablos");
-                    monster.setMonsterDamage(550);
-                    monster.setMonsterSpeed(3);
-                    combat.battle(aWeapon);
+                    Monster diablos = new Monster("Diablos", 9500, 550);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 7:
                     //Nergigante
-                    monster.setHealth(10275);
-                    monster.setName("Nergigante");
-                    monster.setMonsterDamage(600);
-                    monster.setMonsterSpeed(2);
-                    combat.battle(aWeapon);
+                    Monster nergigante = new Monster("Nergigante", 10275,600);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 8:
                     //Kirin
-                    monster.setHealth(12500);
-                    monster.setName("Kirin");
-                    monster.setMonsterDamage(650);
-                    monster.setMonsterSpeed(4);
-                    combat.battle(aWeapon);
+                    Monster kirin = new Monster("Kirin", 12500, 650);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 9:
                     //Teostra
-                    monster.setHealth(17500);
-                    monster.setName("Teostra");
-                    monster.setMonsterDamage(700);
-                    monster.setMonsterSpeed(3);
-                    combat.battle(aWeapon);
+                    Monster teostra = new Monster("Teostra", 17500, 700);
+                    combat.characterBattle(aWeapon);
                     break;
                 case 10:
                     //return to menu
