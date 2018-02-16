@@ -4,21 +4,11 @@ public class Monster {
     private String name;
     private int Health;
     private int monsterDamage;
-    private int monsterSpeed;
 
     public Monster(String name, int Health, int monsterDamage) {
         this.name = name;
         this.Health = Health;
         this.monsterDamage = monsterDamage;
-        this.monsterSpeed = monsterSpeed;
-    }
-
-    public int getMonsterSpeed() {
-        return monsterSpeed;
-    }
-
-    public void setMonsterSpeed(int monsterSpeed) {
-        this.monsterSpeed = monsterSpeed;
     }
 
     public int getMonsterDamage() {

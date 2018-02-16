@@ -6,10 +6,9 @@ public class WeaponType{
     private int speed;
     private int dodgeChance;
 
-    public WeaponType() {
+    public WeaponType(String weaponType, int damage, int dodgeChance) {
         this.weaponType = weaponType;
         this.damage = damage;
-        this.speed = speed;
         this.dodgeChance = dodgeChance;
 
     }

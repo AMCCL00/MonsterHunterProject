@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Combat {
+    private final Monster monster;
     Dialogue dialogue = new Dialogue();
     Hunter hunter = new Hunter();
     Scanner input = new Scanner(System.in);
@@ -28,6 +29,10 @@ public class Combat {
         }
     }
 
+    public Combat(Monster monster) {
+        this.monster = monster;
+    }
+
     public void mounting() {
         mount = (int) Math.ceil(Math.random() * 5);
         mountGuess = input.nextInt();
@@ -45,7 +50,7 @@ public class Combat {
                 "3. Attempt to mount it\n" +
                 "4. Run back to camp");
         while (monsterAlive = true) {
-            GameMenu menu = new GameMenu();
+            GameMenu menu = new GameMenu(monster);
             try {
                 if (hunter.getHealth() <= 0) {
                     System.out.println("You were defeated!");

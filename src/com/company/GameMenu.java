@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class GameMenu extends Combat{
 
     Scanner input = new Scanner(System.in);
-    Combat combat = new Combat();
+    private Monster monster;
+    Combat combat = new Combat(monster);
     public void Menu(Weapon aWeapon){
         System.out.println("What would you like to do?");
         System.out.println("1. Change your weapon \n2. Go on a Hunt \n3. Exit the Game");
@@ -33,6 +34,10 @@ public class GameMenu extends Combat{
         }catch(Exception e){
 
         }
+    }
+
+    public GameMenu(Monster monster) {
+        super(monster);
     }
 
     public void Hunt(Weapon aWeapon){
@@ -113,5 +118,6 @@ public class GameMenu extends Combat{
             System.out.println("Hunter, please choose one of the listed monsters or leave.");
             Hunt(aWeapon);
         }
+
     }
 }
