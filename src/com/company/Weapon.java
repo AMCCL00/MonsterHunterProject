@@ -1,13 +1,9 @@
 package com.company;
 
 public class Weapon extends GameMenu{
-    WeaponType weaponType = new WeaponType();
+    WeaponType weaponType = new WeaponType("", 0, 0);
     Dialogue dialogue = new Dialogue();
     private int playerDamage;
-
-    public Weapon(Monster monster) {
-        super(monster);
-    }
 
     public int getPlayerDamage() {
         return playerDamage;
@@ -93,7 +89,7 @@ public class Weapon extends GameMenu{
                 case 12:
                     //Gunlance
                     WeaponType gunlance = new WeaponType("Gunlance", 160, 2);
-                    System.out.println("Smith: The gun lance uses lung attacks and the gun at the end of the hilt to do powerful attacks to the monster.");
+                    System.out.println("Smith: The gun lance uses lunge attacks and the gun at the end of the hilt to do powerful attacks to the monster.");
                     break;
                 case 13:
                     //Hunting Horn
@@ -101,7 +97,7 @@ public class Weapon extends GameMenu{
                     System.out.println("Smith: Ahh the hunting horn, average damage, speed and mobility but it can buff you and other members of your Hunting party so theres that.");
                     break;
                 case 14:
-                    WeaponType greatSword = new WeaponType("Great Sword", 225, 1);
+                    WeaponType greatSword = new WeaponType("Great Sword", 225, 5);
                     System.out.println("Smith: The classic Greatsword, Very powerful but slow attacks, none the less a great weapon!");
                     break;
                 case 15:

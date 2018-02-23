@@ -6,7 +6,7 @@ public class GameMenu extends Combat{
 
     Scanner input = new Scanner(System.in);
     private Monster monster;
-    Combat combat = new Combat(monster);
+    Combat combat = new Combat();
     public void Menu(Weapon aWeapon){
         System.out.println("What would you like to do?");
         System.out.println("1. Change your weapon \n2. Go on a Hunt \n3. Exit the Game");
@@ -24,7 +24,7 @@ public class GameMenu extends Combat{
                     break;
                 case 3:
                     //exit
-                    System.exit(123);
+                    System.exit(12321);
                 default:
                     input.nextLine();
                     System.out.println("Quit joking around Hunter, we need your help!");
@@ -34,10 +34,6 @@ public class GameMenu extends Combat{
         }catch(Exception e){
 
         }
-    }
-
-    public GameMenu(Monster monster) {
-        super(monster);
     }
 
     public void Hunt(Weapon aWeapon){
@@ -59,47 +55,47 @@ public class GameMenu extends Combat{
                 case 1:
                     //Great Jagras
                     Monster greatJagras = new Monster("Great Jagras", 5200, 300);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 2:
                     //Tobi-Kadachi
                     Monster tobiKadachi = new Monster("Tobi-Kadachi", 7000,350);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 3:
                     //Anjanath
                     Monster anjanath = new Monster("Anjanath", 7750, 400);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 4:
                     //Great Girros
                     Monster greatGirros = new Monster("Great Girros", 8250, 450);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 5:
                     //Rathilos
                     Monster rathilos = new Monster("Rathilos", 9000, 500);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 6:
                     //Diablos
                     Monster diablos = new Monster("Diablos", 9500, 550);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 7:
                     //Nergigante
                     Monster nergigante = new Monster("Nergigante", 10275,600);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 8:
                     //Kirin
                     Monster kirin = new Monster("Kirin", 12500, 650);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 9:
                     //Teostra
                     Monster teostra = new Monster("Teostra", 17500, 700);
-                    combat.characterBattle(aWeapon);
+                    combat.characterBattle(aWeapon, monster);
                     break;
                 case 10:
                     //return to menu
@@ -107,7 +103,7 @@ public class GameMenu extends Combat{
                     break;
                 case 11:
                     //Run
-                    System.exit(123);
+                    System.exit(12321);
                 default:
                     input.nextLine();
                     System.out.println("Hunter, please choose one of the listed monsters or leave.");

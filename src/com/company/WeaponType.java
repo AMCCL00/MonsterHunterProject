@@ -12,7 +12,6 @@ public class WeaponType{
         this.dodgeChance = dodgeChance;
 
     }
-
     public String getWeaponType() {
         return weaponType;
     }

@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         Dialogue dialogue = new Dialogue();
         Scanner input = new Scanner(System.in);
-        Weapon Weapon = new Weapon(monster);
-        GameMenu menu = new GameMenu(monster);
+        Weapon Weapon = new Weapon();
+        GameMenu menu = new GameMenu();
         Hunter hunter = new Hunter();
         dialogue.instructions();
         dialogue.backStory();
