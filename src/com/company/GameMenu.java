@@ -55,47 +55,47 @@ public class GameMenu extends Combat{
                 case 1:
                     //Great Jagras
                     Monster greatJagras = new Monster("Great Jagras", 5200, 300);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, greatJagras);
                     break;
                 case 2:
                     //Tobi-Kadachi
                     Monster tobiKadachi = new Monster("Tobi-Kadachi", 7000,350);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, tobiKadachi);
                     break;
                 case 3:
                     //Anjanath
                     Monster anjanath = new Monster("Anjanath", 7750, 400);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, anjanath);
                     break;
                 case 4:
                     //Great Girros
                     Monster greatGirros = new Monster("Great Girros", 8250, 450);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, greatGirros);
                     break;
                 case 5:
                     //Rathilos
                     Monster rathilos = new Monster("Rathilos", 9000, 500);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, rathilos);
                     break;
                 case 6:
                     //Diablos
                     Monster diablos = new Monster("Diablos", 9500, 550);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, diablos);
                     break;
                 case 7:
                     //Nergigante
                     Monster nergigante = new Monster("Nergigante", 10275,600);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, nergigante);
                     break;
                 case 8:
                     //Kirin
                     Monster kirin = new Monster("Kirin", 12500, 650);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, kirin);
                     break;
                 case 9:
                     //Teostra
                     Monster teostra = new Monster("Teostra", 17500, 700);
-                    combat.characterBattle(aWeapon, monster);
+                    combat.characterBattle(aWeapon, teostra);
                     break;
                 case 10:
                     //return to menu

@@ -6,7 +6,7 @@ public class Combat {
     Dialogue dialogue = new Dialogue();
     Hunter hunter = new Hunter();
     Scanner input = new Scanner(System.in);
-    WeaponType weaponType = new WeaponType("", 0, 0);
+    WeaponType weaponType = new WeaponType("Unarmed", 1, 0);
     private int dodgeChance;
     private int hit;
     private int mount;
@@ -19,9 +19,10 @@ public class Combat {
 
     public void dodge(){
         input.nextLine();
+        System.out.println("Pick a number between 1 and 10 for your dodge chance.");
         hit = (int) (Math.ceil(Math.random()) * 10);
         dodgeChance = input.nextInt();
-        if (dodgeChance == hit + weaponType.getDodgeChance() || dodgeChance == hit || dodgeChance == hit - weaponType.getDodgeChance()) {
+        if (hit >= dodgeChance + weaponType.getDodgeChance() || dodgeChance == hit || hit <= dodgeChance - weaponType.getDodgeChance()) {
             damage = false;
         }
         else{
@@ -33,12 +34,12 @@ public class Combat {
         mount = (int) Math.ceil(Math.random() * 5);
         mountGuess = input.nextInt();
         if (mountGuess == mount) {
+            System.out.println("You successfully mounted the monster and knocked it on the ground for 2 rounds.");
             //deal 750 damage to the monster and knock it down for 2 rounds
             monster.setHealth(monster.getHealth() - 750);
             Standing = false;
-            grounded++;
-
-            //use a boolean to determine how long it is knocked down for and use a increment to track the number of rounds
+            //use a boolean to determine how long it is knocked down for and use a increment to track the number of rounds in the attacking
+            //case
         }
     }
 
@@ -50,7 +51,6 @@ public class Combat {
                 "4. Run back to camp");
         while (monsterAlive = true) {
             GameMenu menu = new GameMenu();
-            try {
                 if (hunter.getHealth() <= 0) {
                     System.out.println("You were defeated!");
                     System.exit(12321);
@@ -59,16 +59,16 @@ public class Combat {
                             "1. Return to the menu\n" +
                             "2. Hunt another monster\n" +
                             "3. Exit the game");
-                    switch (input.nextInt()) {
-                        case 1:
+                    switch (input.nextLine()) {
+                        case "1":
                             //Menu
                             menu.Menu(aWeapon);
                             break;
-                        case 2:
+                        case "2":
                             //Hunt
                             menu.Hunt(aWeapon);
                             break;
-                        case 3:
+                        case "3":
                             //Exit
                             System.exit(12321);
                             break;
@@ -77,30 +77,34 @@ public class Combat {
                             System.out.println("Please enter 1 2 or 3.");
                             characterBattle(aWeapon, monster);
                     }
-
                 }
-            } catch (Exception e) {
-                input.nextLine();
-                System.out.println("Please enter 1 2 or 3.");
-                characterBattle(aWeapon, monster);
-            }
-            try {
-                    switch (input.nextInt()) {
-                        case 1:
+                    else {
+                    switch (input.nextLine()) {
+                        case "1":
                             //attack
                             System.out.println("You attack the monster.");
                             monster.setHealth(monster.getHealth() - weaponType.getDamage());
                             System.out.println("The monster has " + monster.getHealth() + " health left.");
-                            if(Standing){
-                                if(damage){
+                            if (Standing) {
+                                dodge();
+                                if (damage) {
                                     hunter.setHealth(hunter.getHealth() - monster.getMonsterDamage());
-                                }
-                                else{
+                                    System.out.println("The monster hits you! You have " + hunter.getHealth() + " health left.");
+                                } else {
+                                    System.out.println("The monster misses! You have " + hunter.getHealth() + " health left.");
                                     damage = true;
                                 }
                             }
+                            if (Standing = false){
+                                grounded++;
+                                System.out.println("The monster is knocked down and can't attack for + " + (3 - grounded) + " more rounds.");
+                                if(grounded == 2){
+                                    Standing = true;
+                                }
+                            }
+                            characterBattle(aWeapon, monster);
                             break;
-                        case 2:
+                        case "2":
                             //potion
                             if (potionUses < 10) {
                                 hunter.setHealth(1000);
@@ -112,11 +116,11 @@ public class Combat {
                                 characterBattle(aWeapon, monster);
                             }
                             break;
-                        case 3:
+                        case "3":
                             //mount
                             mounting(monster);
                             break;
-                        case 4:
+                        case "4":
                             //run
                             menu.Hunt(aWeapon);
                             break;
@@ -126,11 +130,8 @@ public class Combat {
                             characterBattle(aWeapon, monster);
                             break;
                     }
-            } catch (Exception e) {
-                input.nextLine();
-                System.out.println("Attack, Heal, Attempt to mount or Run");
-                characterBattle(aWeapon, monster);
-            }
+
+                }
         }
     }
 }
