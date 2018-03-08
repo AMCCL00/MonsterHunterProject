@@ -99,7 +99,6 @@ public class Combat {
                                 grounded++;
                                 System.out.println("The monster is knocked down and can't attack for + " + (3 - grounded) + " more rounds.");
                                 if(grounded == 2){
-                                    Standing = true;
                                 }
                             }
                             characterBattle(aWeapon, monster);

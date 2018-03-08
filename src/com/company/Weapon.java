@@ -29,78 +29,77 @@ public class Weapon extends GameMenu{
                 "13. Hunting Horn \n" +
                 "14. Great Sword\n" +
                 "15. Exit the Smithy");
-        try{
-            switch(input.nextInt()){
-                case 1:
+            switch(input.nextLine()){
+                case "1":
                     //Longsword
-                    WeaponType longsword = new WeaponType("Longsword", 150, 4);
+                    WeaponType longsword = new WeaponType("Longsword", 150, 3);
                     System.out.println("Smith: Ahh the Long Sword, Great choice Hunter.");
                     break;
-                case 2:
+                case "2":
                     //Switch Axe
                     WeaponType switchAxe = new WeaponType("Switch Axe", 200, 1);
                     System.out.println("Smith: The Switch Axe, I like your taste Hunter. ");
                     break;
-                case 3:
+                case "3":
                     //Insect Glaive
-                    WeaponType insectGlaive = new WeaponType("Insect Glaive", 125, 4);
+                    WeaponType insectGlaive = new WeaponType("Insect Glaive", 125, 3);
                     System.out.println("Smith: The Insect Glaive, Fast and Mobile.");
                     break;
-                case 4:
+                case "4":
                     //Charge Blade
-                    WeaponType chargeBlade = new WeaponType("Charge Blade", 170, 3);
+                    WeaponType chargeBlade = new WeaponType("Charge Blade", 170, 2);
                     System.out.println("Smith: A shield and a big sword in one!");
                     break;
-                case 5:
+                case "5":
                     //Hammer
                     WeaponType Hammer = new WeaponType("Hammer", 225, 1);
                     System.out.println("Smith: Slow but powerful weapon, good choice hunter!");
                     break;
-                case 6:
+                case "6":
                     //Dual Blade
-                    WeaponType dualBlade = new WeaponType("Dual Blade", 150, 5);
+                    WeaponType dualBlade = new WeaponType("Dual Blade", 150, 4);
                     System.out.println("Smith: Duel blades are very fast light attacks with great mobility, I like your style Hunter.");
                     break;
-                case 7:
+                case "7":
                     //Bow
-                    WeaponType Bow = new WeaponType("Bow", 125, 3);
+                    WeaponType Bow = new WeaponType("Bow", 125, 2);
                     System.out.println("Smith: A Bow, Fast and powerful ranged attacks with this one Hunter.");
                     break;
-                case 8:
+                case "8":
                     //Light Bowgun
-                    WeaponType lightBowgun = new WeaponType("Light Bowgun", 50, 4);
+                    WeaponType lightBowgun = new WeaponType("Light Bowgun", 50, 3);
                     System.out.println("Smith: The Light Bowgun, Very fast light attacks.");
                     break;
-                case 9:
+                case "9":
                     //Heavy Bowgun
-                    WeaponType heavyBowgun = new WeaponType("Heavy Bowgun", 175, 3);
+                    WeaponType heavyBowgun = new WeaponType("Heavy Bowgun", 175, 2);
                     System.out.println("Smith: Slow powerful attacks from a range.");
                     break;
-                case 10:
+                case "10":
                     //Sword and Shield
-                    WeaponType swordAndShield = new WeaponType("Sword and Shield", 100, 5);
+                    WeaponType swordAndShield = new WeaponType("Sword and Shield", 100, 4);
                     System.out.println("Smith: A classic Sword and shield, average damage and speed but good defense.");
                     break;
-                case 11:
+                case "11":
                     //Lance
-                    WeaponType lance = new WeaponType("Lance", 150, 3);
+                    WeaponType lance = new WeaponType("Lance", 150, 2);
                     System.out.println("Smith: The lance is a slow but powerful lung attacking weapon with decent mobility, interesting choice, but I like it Hunter.");
                     break;
-                case 12:
+                case "12":
                     //Gunlance
-                    WeaponType gunlance = new WeaponType("Gunlance", 160, 2);
+                    WeaponType gunlance = new WeaponType("Gunlance", 160, 1);
                     System.out.println("Smith: The gun lance uses lunge attacks and the gun at the end of the hilt to do powerful attacks to the monster.");
                     break;
-                case 13:
+                case "13":
                     //Hunting Horn
-                    WeaponType huntingHorn = new WeaponType("Hunting Horn", 140, 4);
+                    WeaponType huntingHorn = new WeaponType("Hunting Horn", 140, 3);
                     System.out.println("Smith: Ahh the hunting horn, average damage, speed and mobility but it can buff you and other members of your Hunting party so theres that.");
                     break;
-                case 14:
-                    WeaponType greatSword = new WeaponType("Great Sword", 225, 5);
+                case "14":
+                    WeaponType greatSword = new WeaponType("Great Sword", 225, 4);
                     System.out.println("Smith: The classic Greatsword, Very powerful but slow attacks, none the less a great weapon!");
                     break;
-                case 15:
+                case "15":
                     //return to menu
                     Menu(aWeapon);
                 default:
@@ -108,11 +107,6 @@ public class Weapon extends GameMenu{
                     System.out.println("Please pick a weapon Hunter...");
                     whichWeapon(aWeapon);
             }
-        }catch(Exception e){
-            input.nextLine();
-            System.out.println("Please pick a weapon Hunter...");
-            whichWeapon(aWeapon);
-        }
         Menu(aWeapon);
     }
 }
